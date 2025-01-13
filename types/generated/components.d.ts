@@ -52,18 +52,6 @@ export interface ResearchConclusionParaReasearchSummary
   };
 }
 
-export interface ReasearchContentResearchContent extends Schema.Component {
-  collectionName: 'components_reasearch_content_research_contents';
-  info: {
-    displayName: 'ResearchContent';
-  };
-  attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    ReasearchContent: Attribute.Text;
-    Link: Attribute.String;
-  };
-}
-
 export interface ParagraphContentParagraphContent extends Schema.Component {
   collectionName: 'components_paragraph_content_paragraph_contents';
   info: {
@@ -76,6 +64,18 @@ export interface ParagraphContentParagraphContent extends Schema.Component {
     Pdf: Attribute.Media<'files'>;
     Heading: Attribute.String;
     Date: Attribute.Date;
+    Link: Attribute.String;
+  };
+}
+
+export interface ReasearchContentResearchContent extends Schema.Component {
+  collectionName: 'components_reasearch_content_research_contents';
+  info: {
+    displayName: 'ResearchContent';
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ReasearchContent: Attribute.Text;
     Link: Attribute.String;
   };
 }
@@ -121,8 +121,8 @@ declare module '@strapi/types' {
       'small-paragraph.papers-published': SmallParagraphPapersPublished;
       'small-paragraph.members': SmallParagraphMembers;
       'research-conclusion-para.reasearch-summary': ResearchConclusionParaReasearchSummary;
-      'reasearch-content.research-content': ReasearchContentResearchContent;
       'paragraph-content.paragraph-content': ParagraphContentParagraphContent;
+      'reasearch-content.research-content': ReasearchContentResearchContent;
       'member.research-item': MemberResearchItem;
       'member.project-item': MemberProjectItem;
       'gallery.gallery-component': GalleryGalleryComponent;
